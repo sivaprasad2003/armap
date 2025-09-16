@@ -9,7 +9,7 @@
     <script>eruda.init();</script>
 </head>
 <body>
-    <a-scene mindar-image="..." color-space="sRGB" renderer="colorManagement: true" ...>
+    <a-scene mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 1;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
         
          
         <a-assets>
@@ -23,7 +23,7 @@
     <a-gltf-model 
         tap-handler 
         info="name: Meenakshi Temple, Madurai; desc: A historic Hindu temple located on the southern bank of the Vaigai River."
-        src="models/madurai.glb"
+        src="models/madurai.glb" 
         position="0.2 0 -0.3" scale="0.08 0.08 0.08" rotation="0 0 0">
     </a-gltf-model>
             
