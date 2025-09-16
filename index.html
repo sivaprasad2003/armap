@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <title>AR Temple Map</title>
     
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
@@ -22,7 +22,7 @@
         device-orientation-permission-ui="enabled: false">
         
         <a-assets>
-            <a-asset-item id="maduraiModel" src="models/madurai.glb"></a-asset-item>
+            <a-asset-item id="maduraiModel" src="madurai.glb"></a-asset-item>
         </a-assets>
 
         <a-camera position="0 0 0" look-controls="enabled: false" cursor="rayOrigin: mouse" raycaster="objects: [gltf-model]"></a-camera>
@@ -44,5 +44,18 @@
         <p id="templeDescription"></p>
         <button id="closeButton">Close</button>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const scene = document.querySelector('a-scene');
+        if (scene.hasLoaded) {
+          scene.style.height = window.innerHeight + 'px';
+        } else {
+          scene.addEventListener('loaded', () => {
+            scene.style.height = window.innerHeight + 'px';
+          });
+        }
+      });
+    </script>
 </body>
 </html>
