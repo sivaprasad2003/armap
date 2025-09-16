@@ -1,3 +1,5 @@
+/* style.css */
+
 /* Make sure the AR scene takes up the whole screen */
 body {
     margin: 0;
@@ -5,20 +7,22 @@ body {
 
 /* Styling for the description popup */
 #infoPopup {
+    /* --- THIS IS THE CRITICAL FIX --- */
+    z-index: 100; 
+
+    /* General Styling */
     display: none; /* Hidden by default */
-    position: fixed;
+    position: fixed; /* Stays in place on the screen */
     bottom: 20px;
-    left: 5%;
-    right: 5%;
+    left: 50%;
+    transform: translateX(-50%); /* Centers the popup */
     width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
+    max-width: 400px;
     background-color: rgba(20, 20, 20, 0.85);
     color: white;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    z-index: 100;
     text-align: center;
     font-family: sans-serif;
 }
