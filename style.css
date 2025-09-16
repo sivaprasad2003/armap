@@ -1,21 +1,36 @@
 /* style.css */
 
-/* Make sure the AR scene takes up the whole screen */
+/*
+  FIX: Force the body and the A-Frame scene 
+  to take up the full screen without margins or scrolling.
+*/
 body {
     margin: 0;
+    overflow: hidden; /* Prevents scrollbars */
 }
+
+a-scene {
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw;  /* 100% of the viewport width */
+}
+
+/* This targets the canvas element that A-Frame creates, 
+  ensuring it's not letterboxed.
+*/
+.a-canvas {
+    height: 100%;
+    width: 100%;
+}
+
 
 /* Styling for the description popup */
 #infoPopup {
-    /* --- THIS IS THE CRITICAL FIX --- */
     z-index: 100; 
-
-    /* General Styling */
-    display: none; /* Hidden by default */
-    position: fixed; /* Stays in place on the screen */
+    display: none;
+    position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Centers the popup */
+    transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
     background-color: rgba(20, 20, 20, 0.85);
